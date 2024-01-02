@@ -1,18 +1,14 @@
 #!/usr/bin/fish
-
-pacotes=(
-	"wl-clipboard"	 		
-	"wofi" "waybar" 
-	"ttf-font-awesome" 	 
-)
+set -l wl_tools "wl-clipboard" "wofi" "waybar" "wtype" "ydotool" "slurp" "grim" "swappy"
+set -l other "ttf-font-awesome" 
 
 
+set -l pacotes $wl_tools $other
 
-sudo pacman -Sy
-
+sudo ls -la
+yay -Sy
 
 # Itera sobre o array e exibe todos os elementos
-for pk in "${pacotes[@]}"
-do
-    sudo pacman -S -q --needed --noconfirm $pk
-done
+for pk in $pacotes
+    yay -S -q --needed --noconfirm $pk
+end
