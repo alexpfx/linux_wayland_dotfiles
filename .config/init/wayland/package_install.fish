@@ -1,5 +1,5 @@
 #!/usr/bin/fish
-set -l wl_tools "wl-clipboard" "wofi" "waybar" "wtype" "ydotool" "slurp" "grim" "swappy"
+set -l wl_tools "wl-clipboard" "wofi" "waybar" "wtype" "ydotool" "slurp" "grim" "swappy" "rofi-lbonn-wayland-git"
 set -l other "ttf-font-awesome" 
 
 
