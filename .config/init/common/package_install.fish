@@ -1,5 +1,5 @@
 #!/usr/bin/fish
-set -l tools fish fisher kitty micro fzf z gnome-disk-utility unzip sysbench ncdu pass lsof inxi fastfetch man kwayland-integrations cliphist
+set -l tools fish fisher kitty micro fzf z gnome-disk-utility unzip sysbench ncdu pass lsof inxi fastfetch man kwayland-integrations cliphist polkit-kde-agent
 set -l network chromium openssh nmap openconnect
 set -l dev go git github-cli vscodium-bin vscodium-bin-marketplace insomnium-bin docker docker-compose docker-buildx python-pip python-pipx meld python
 
