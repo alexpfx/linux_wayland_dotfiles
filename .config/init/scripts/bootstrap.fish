@@ -1,2 +1,2 @@
 #!/usr/bin/fish
-set -l 
+fish_add_path (pwd)
