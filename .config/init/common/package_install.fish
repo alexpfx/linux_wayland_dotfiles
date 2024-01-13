@@ -18,3 +18,11 @@ for pk in $pacotes
 end
 
 go install github.com/spf13/cobra-cli@latest
+
+
+set gituser = "alexpfx"
+set -l repos go-dotfiles go-pass_manager
+
+for r in $repos
+    git clone "https://github.com/$gituser/$r" /data/git/
+end
