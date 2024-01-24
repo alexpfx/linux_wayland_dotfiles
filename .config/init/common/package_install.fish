@@ -6,10 +6,10 @@ set -l dev go git github-cli vscodium-bin vscodium-bin-marketplace insomnium-bin
 set -l fonts ttf-font-awesome ttf-jetbrains-mono 
 set -l token opensc pkcs11-helper pcsc-tools ca-certificates-icp_br safesignidentityclient sac-core insomnium-bin h-m-m-git
 
-set -l retroarch-assets-ozone retroarch retroarch-assets-ozone retroarch-assets-xmb retroarch-assets-glui
+set -l emuladores retroarch-assets-ozone retroarch retroarch-assets-ozone retroarch-assets-xmb retroarch-assets-glui
 
 
-set -l pacotes $tools $fonts $dev $token $network
+set -l pacotes $tools $fonts $dev $token $network $emuladores
 
 sudo ls -la
 yay -Sy
