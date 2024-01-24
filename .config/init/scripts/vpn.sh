@@ -11,18 +11,6 @@ echo -v "sudo openconnect --no-dtls --authgroup=$group --protocol=gp -u $user -c
 # Armazena o tempo inicial
 start_time=$SECONDS
 
-# Função para calcular e exibir o tempo decorrido
-show_elapsed_time() {
-  while true; do
-    elapsed_time=$((SECONDS - start_time))
-    echo "Tempo decorrido: $elapsed_time segundos\n"
-    sleep 30
-  done
-}
-
-show_elapsed_time &
-
 sudo openconnect --no-dtls --authgroup=$group --protocol=gp -u $user -c $crt -v $gtw
 
 
-kill $!

@@ -23,3 +23,4 @@ fisher install jethrokuan/fzf
 fisher install jethrokuan/z
 fisher install franciscolourenco/done
 fisher install jorgebucaran/autopair.fish
+sudo chsh -s /bin/fish $USER
