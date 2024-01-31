@@ -29,3 +29,4 @@ set -l repos "go-dotfiles" "go-pass_manager"
 for r in $repos
     git clone "https://github.com/$gituser/$r" /data/git/$r
 end
+sudo pacman -S ttf-nerd-fonts-symbols-mono
