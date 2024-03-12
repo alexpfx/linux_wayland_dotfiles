@@ -11,19 +11,19 @@
     // Modules configuration
     
     "hyprland/workspaces": {
-      "format": "{name}",
+      "format": "{name} {icon}",
       "on-click": "activate",
       "format-icons": {
-        "1": "",
+        "1": "",
         "2": "",
         "3": "",
-        "4": "",
-        "5": "",
+        "4": "",
+        "0": "",
         "urgent": "",
         "active": "",
         "default": ""
       },
-      "sort-by-number": true
+      "sort-by-number": true,
     },
     
     "keyboard-state": {
