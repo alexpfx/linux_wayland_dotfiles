@@ -1,0 +1,66 @@
+set $main_font JetBrains Mono,JetBrains Mono SemiBold:style=SemiBold,Regular 12
+set $icon_font Font Awesome 6 Free 10
+
+show_marks yes
+titlebar_padding 16 2
+default_border pixel 1
+client.focused 			#ffaa22 #ffaa22 #ffffff #ffaa22
+client.focused_inactive #aabbcc #504945 #ffffff #504945
+client.unfocused 		#aabbcc #504945 #ffffff #504945
+client.urgent			#cc241d #cc241d #504945
+font pango:$main_font
+focus_follows_mouse no
+floating_modifier $mod normal
+
+bar { 
+     swaybar_command waybar
+}
+
+# bar {
+# 	id tbar
+#     
+#     height 15
+#     font pango:$main_font, $icon_font
+#     position top
+#  	tray_output primary 
+#  
+# 
+#    	#strip_workspace_name yes
+#    	strip_workspace_numbers yes
+#     status_command i3status-rs ~/.config/i3status-rust/config.toml
+# 
+# 	colors {        
+# 		background #3c3836
+# 		statusline #ebdbb2
+# 		separator  #666666                	
+# 		focused_workspace  #458588 #458588 #ebdbb2
+# 		active_workspace   #83a598 #83a598 #ebdbb2
+# 		inactive_workspace #504945 #504945 #ebdbb2
+# 		urgent_workspace   #cc241d #cc241d #504945
+#     }
+# }
+
+
+bar {
+	id bbar
+    
+    height 12
+    font pango:$main_font, $icon_font
+    position bottom
+
+	workspace_buttons no   	
+	mode hide
+	
+	modifier "$mod"
+	
+	colors {        
+  		background #3c3836
+  		statusline #ebdbb2
+  		separator  #666666                	
+  		focused_workspace  #458588 #458588 #ebdbb2
+  		active_workspace   #83a598 #83a598 #ebdbb2
+  		inactive_workspace #504945 #504945 #ebdbb2
+  		urgent_workspace   #cc241d #cc241d #504945
+    }
+    
+}

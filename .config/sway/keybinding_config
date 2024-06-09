@@ -1,0 +1,234 @@
+set $Work1 1
+set $Work2 2
+set $Work3 3
+set $Work4 4 
+set $Work5 5 
+set $Work6 6
+set $Work7 7
+set $Work8 8
+set $Work9 9 
+set $Work0 10:0 
+
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term alacritty
+set $idea jetbrains-idea
+set $goland jetbrains-goland
+set $browser Brave-browser
+
+set $mouse_left "swaymsg input type:pointer left_handed enabled"
+set $mouse_right "swaymsg input type:pointer left_handed disabled"
+
+
+#Label
+set $label_a "alm"
+set $label_b "browser"
+set $label_c "chat"
+set $label_d "db"
+set $label_f "fs"
+set $label_g "git"
+set $label_i "ide"
+
+set $label_m "mvn"
+set $label_p "pavu"
+set $label_r "rest"
+set $label_s "ssh"
+set $label_t "test"
+set $label_v "vpn"
+set $label_w "weblogic"
+
+#class
+set $ws4 "ws4_class"
+   
+   
+for_window [workspace=$Work1] layout tabbed
+for_window [workspace=$Work2] layout tabbed
+for_window [workspace=$Work3] layout tabbed
+for_window [workspace=$Work4] layout splith
+for_window [workspace=$Work5] layout tabbed
+for_window [workspace=$Work6] layout tabbed
+for_window [workspace=$Work7] layout tabbed
+for_window [workspace=$Work8] layout tabbed
+for_window [workspace=$Work9] layout tabbed
+for_window [workspace=$Work0] layout splith
+
+for_window [app_id="zenity"] floating enable
+for_window [app_id="yad"] floating enable
+for_window [class="Microsoft Teams.*"] mark "chat", move container to workspace number $Work8
+for_window [class="teams-for-linux"] mark "chat", move container to workspace number $Work8
+for_window [class=$goland] mark "ide"
+for_window [class=$idea] mark "ide"
+for_window [class="Google-chrome"] mark "browser", move container to workspace number $Work2, focus
+for_window [class=$ws4] move container to workspace number $Work4, focus
+   
+   
+mode "goto" {
+	bindsym --no-repeat a [con_mark=$label_a] focus, mode "default"
+	bindsym --no-repeat b [con_mark=$label_b] focus, mode "default"
+	bindsym --no-repeat c [con_mark=$label_c] focus, mode "default"
+	bindsym --no-repeat d [con_mark=$label_d] focus, mode "default"
+	bindsym --no-repeat e [con_mark=$label_e] focus, mode "default"
+	bindsym --no-repeat f [con_mark=$label_f] focus, mode "default"
+	bindsym --no-repeat g [con_mark=$label_g] focus, mode "default"
+	bindsym --no-repeat h [con_mark=$label_h] focus, mode "default"
+	bindsym --no-repeat i [con_mark=$label_i] focus, mode "default"
+	bindsym --no-repeat j [con_mark=$label_j] focus, mode "default"
+	bindsym --no-repeat k [con_mark=$label_k] focus, mode "default"
+	bindsym --no-repeat l [con_mark=$label_l] focus, mode "default"
+	bindsym --no-repeat m [con_mark=$label_m] focus, mode "default"
+	bindsym --no-repeat n [con_mark=$label_n] focus, mode "default"
+	bindsym --no-repeat o [con_mark=$label_o] focus, mode "default"
+	bindsym --no-repeat p [con_mark=$label_p] focus, mode "default"
+	bindsym --no-repeat q [con_mark=$label_q] focus, mode "default"
+	bindsym --no-repeat r [con_mark=$label_r] focus, mode "default"
+	bindsym --no-repeat s [con_mark=$label_s] focus, mode "default"
+	bindsym --no-repeat t [con_mark=$label_t] focus, mode "default"
+	bindsym --no-repeat u [con_mark=$label_u] focus, mode "default"
+	bindsym --no-repeat v [con_mark=$label_v] focus, mode "default"
+	bindsym --no-repeat x [con_mark=$label_x] focus, mode "default"
+	bindsym --no-repeat z [con_mark=$label_z] focus, mode "default"
+	bindsym --no-repeat w [con_mark=$label_w] focus, mode "default"
+	bindsym --no-repeat y [con_mark=$label_y] focus, mode "default"
+	
+	
+	#bindsym $s exec swaymsg "[con_mark=$(zenity --entry --text='Enter mark:')] focus"
+	
+	bindsym Backspace mode "default"
+	bindsym Escape mode "default"
+}
+   
+mode "open" {
+   	bindsym --no-repeat b exec google-chrome-stable, mode "default"
+   	bindsym --no-repeat t exec $term --class $ws4, mode "default" 
+   	bindsym Backspace mode "default"
+   	bindsym Escape mode "default"
+   	
+   }
+   
+
+mode "resize" {    
+	bindsym $left resize shrink width 10px
+	bindsym $down resize grow height 10px
+	bindsym $up resize shrink height 10px
+	bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+	 bindsym Left resize shrink width 10px
+	 bindsym Down resize grow height 10px
+	 bindsym Up resize shrink height 10px
+	 bindsym Right resize grow width 10px
+
+    # Return to default mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+mode "action" {
+	#bindsym $left exec $mouse_left mode "default"
+	#bindsym $right exec $mouse_right  mode "default"
+	
+	#bindsym Return mode "default"
+	#bindsym Escape mode "default"
+	
+}
+
+mode "change_config" {
+	bindsym $left exec $mouse_left, exec $ntf "Left handed mouse", mode "default"		
+	bindsym $right exec $mouse_right, exec $ntf "Right handed mouse",  mode "default"
+	bindsym Left exec $mouse_left, exec $ntf "Left handed mouse", mode "default"	
+	bindsym Right exec $mouse_right, exec $ntf "Right handed mouse",  mode "default"
+}
+   
+bindsym $mod+r mode "resize"
+bindsym $mod+g mode "goto"
+bindsym $mod+a mode "action"
+bindsym $mod+o mode "open"
+bindsym $mod+F1 mode "change_config"
+
+   
+# Start a terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term --working-directory $SIBE_DIR
+bindsym $mod+Ctrl+Return exec $term --working-directory $SIBE_DOCKER_DIR
+
+
+# Kill focused window
+bindsym $mod+Shift+q kill    
+# Kill focused window
+bindsym --no-repeat $mod+q kill    
+# Open Application Launcher
+bindsym --no-repeat $mod+Space exec rofi -theme solarized -show drun    
+# Open Application Launcher
+bindsym --no-repeat $mod+Shift+Space exec rofi -modi run -theme solarized -show run    
+# Clipboard history
+bindsym --no-repeat $mod+p exec cliphist list | rofi -dmenu | cliphist decode | wl-copy    
+bindsym --no-repeat $mod+m exec swaymsg "mark $(zenity --entry --text='Enter mark:')"
+bindsym --no-repeat $mod+semicolon exec swaymsg "[con_mark=$(zenity --entry  --text='Enter mark:')] focus"    
+# Reload the configuration file
+bindsym $mod+Alt+r reload    
+       
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+
+# Switch to workspace
+bindsym $mod+1 workspace $Work1 
+bindsym $mod+2 workspace $Work2
+bindsym $mod+3 workspace $Work3
+bindsym $mod+4 workspace $Work4
+bindsym $mod+5 workspace $Work5 
+bindsym $mod+6 workspace $Work6
+bindsym $mod+7 workspace $Work7
+bindsym $mod+8 workspace $Work8    
+bindsym $mod+9 workspace $Work9
+bindsym $mod+0 workspace $Work0
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $Work1
+bindsym $mod+Shift+2 move container to workspace $Work2
+bindsym $mod+Shift+3 move container to workspace $Work3 
+bindsym $mod+Shift+4 move container to workspace $Work4   
+bindsym $mod+Shift+5 move container to workspace $Work5  
+bindsym $mod+Shift+6 move container to workspace $Work6
+bindsym $mod+Shift+7 move container to workspace $Work7
+bindsym $mod+Shift+8 move container to workspace $Work8
+bindsym $mod+Shift+9 move container to workspace $Work9
+bindsym $mod+Shift+0 move container to workspace $Work0
+
+
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout splith
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+bindsym $mod+Shift+e exec thunar
+bindsym $mod+Shift+v exec superkey
+bindsym $mod+Shift+p exec pm menu
+bindsym Print exec grimshot copy area
+bindsym $mod+Ctrl+h exec $mouse_left
+bindsym $mod+Ctrl+l exec $mouse_right
+bindsym $mod+Backspace exec yad --entry | sibe-merge | wl-copy
