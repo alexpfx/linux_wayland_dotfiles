@@ -43,7 +43,8 @@ set $label_w "weblogic"
 
 #class
 set $ws4 "ws4_class"
-   
+
+
    
 for_window [workspace=$Work1] layout tabbed
 for_window [workspace=$Work2] layout tabbed
@@ -51,11 +52,13 @@ for_window [workspace=$Work3] layout tabbed
 for_window [workspace=$Work4] layout splith
 for_window [workspace=$Work5] layout tabbed
 for_window [workspace=$Work6] layout tabbed
-for_window [workspace=$Work7] layout tabbed
+for_window [workspace=$Work7] layout float
 for_window [workspace=$Work8] layout tabbed
 for_window [workspace=$Work9] layout tabbed
 for_window [workspace=$Work0] layout splith
 
+for_window [title="xcontext*"] floating enable
+for_window [title="xcontext*"] nofocus
 for_window [app_id="zenity"] floating enable
 for_window [app_id="yad"] floating enable
 for_window [class="Microsoft Teams.*"] mark "chat", move container to workspace number $Work8
@@ -221,9 +224,11 @@ bindsym $mod+Right workspace next
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout splith
+bindsym $mod+f layout floatin
+
 
 # Make the current focus fullscreen
-bindsym $mod+f fullscreen
+# bindsym $mod+f fullscreen
 
 bindsym $mod+Shift+e exec thunar
 bindsym $mod+Shift+v exec superkey
