@@ -14,6 +14,14 @@ input type:touchpad {
 	natural_scroll disabled
 }
 
+
+input 1133:16522:Logitech_MX_Keys {
+    xkb_layout us
+    xkb_variant intl
+}
+
+
+
 exec_always --no-startup-id wl-paste --type text --watch cliphist store
 exec_always --no-startup-id wl-paste --type image --watch cliphist store
 
