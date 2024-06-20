@@ -15,7 +15,8 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
+# set $term alacritty --working-directory
+set $term kitty -d 
 set $idea jetbrains-idea
 set $goland jetbrains-goland
 set $browser Brave-browser
@@ -57,8 +58,8 @@ for_window [workspace=$Work8] layout tabbed
 for_window [workspace=$Work9] layout tabbed
 for_window [workspace=$Work0] layout splith
 
-for_window [title="xcontext*"] floating enable
-for_window [title="xcontext*"] nofocus
+for_window [title="xcontext"] floating enable
+for_window [title="xcontext"] nofocus
 for_window [app_id="zenity"] floating enable
 for_window [app_id="yad"] floating enable
 for_window [class="Microsoft Teams.*"] mark "chat", move container to workspace number $Work8
@@ -154,9 +155,9 @@ bindsym $mod+F1 mode "change_config"
 
    
 # Start a terminal
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term --working-directory $SIBE_DIR
-bindsym $mod+Ctrl+Return exec $term --working-directory $SIBE_DOCKER_DIR
+bindsym $mod+Return exec $term ~
+bindsym $mod+Shift+Return exec $term $SIBE_DIR
+bindsym $mod+Ctrl+Return exec $term $SIBE_DOCKER_DIR
 
 
 # Kill focused window
@@ -199,6 +200,10 @@ bindsym $mod+8 workspace $Work8
 bindsym $mod+9 workspace $Work9
 bindsym $mod+0 workspace $Work0
 
+# workspace $Work3{
+# 	floating enable
+# }
+
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $Work1
 bindsym $mod+Shift+2 move container to workspace $Work2
@@ -224,7 +229,7 @@ bindsym $mod+Right workspace next
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout splith
-bindsym $mod+f layout floatin
+bindsym $mod+f layout floating
 
 
 # Make the current focus fullscreen
