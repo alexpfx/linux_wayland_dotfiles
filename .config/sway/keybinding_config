@@ -50,7 +50,7 @@ set $ws4 "ws4_class"
 for_window [workspace=$Work1] layout tabbed
 for_window [workspace=$Work2] layout tabbed
 for_window [workspace=$Work3] layout tabbed
-for_window [workspace=$Work4] layout splith
+for_window [workspace=$Work4] layout tabbed
 for_window [workspace=$Work5] layout tabbed
 for_window [workspace=$Work6] layout tabbed
 for_window [workspace=$Work7] layout float
