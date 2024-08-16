@@ -53,10 +53,10 @@ for_window [workspace=$Work3] layout tabbed
 for_window [workspace=$Work4] layout tabbed
 for_window [workspace=$Work5] layout tabbed
 for_window [workspace=$Work6] layout tabbed
-for_window [workspace=$Work7] layout float
+for_window [workspace=$Work7] layout tiled
 for_window [workspace=$Work8] layout tabbed
-for_window [workspace=$Work9] layout tabbed
-for_window [workspace=$Work0] layout splith
+for_window [workspace=$Work9] layout tiled
+for_window [workspace=$Work0] layout tiled
 
 for_window [title="xcontext"] floating enable
 for_window [title="xcontext"] nofocus
@@ -158,6 +158,8 @@ bindsym $mod+F1 mode "change_config"
 bindsym $mod+Return exec $term ~
 bindsym $mod+Shift+Return exec $term $SIBE_DIR
 bindsym $mod+Ctrl+Return exec $term $SIBE_DOCKER_DIR
+bindsym $mod+Alt+Return exec $term /data/sibe/git/sibe-pu-testes/funcional/desativacao_cv3/calcrmi
+
 
 
 # Kill focused window
