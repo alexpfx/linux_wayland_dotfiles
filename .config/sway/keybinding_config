@@ -223,13 +223,14 @@ bindsym $mod+Shift+0 move container to workspace $Work0
 # $mod+b or $mod+v, for horizontal and vertical splits
 # respectively.
 bindsym $mod+b splith
-bindsym $mod+v splitv
+#bindsym $mod+v splitv
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+v layout splitv
 bindsym $mod+e layout splith
 bindsym $mod+f layout floating
 
@@ -239,7 +240,7 @@ bindsym $mod+f layout floating
 
 bindsym $mod+Shift+e exec thunar
 bindsym $mod+Shift+v exec superkey
-bindsym $mod+Shift+p exec pm menu
+bindsym $mod+Shift+p exec pm menu -w
 bindsym Print exec grimshot copy area
 bindsym $mod+Ctrl+h exec $mouse_left
 bindsym $mod+Ctrl+l exec $mouse_right
