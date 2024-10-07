@@ -16,7 +16,7 @@ set $up k
 set $right l
 
 # set $term alacritty --working-directory
-set $term kitty -d 
+set $term kitty 
 set $idea jetbrains-idea
 set $goland jetbrains-goland
 set $browser Brave-browser
