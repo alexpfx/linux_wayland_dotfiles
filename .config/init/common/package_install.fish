@@ -9,7 +9,7 @@ set -l token opensc pkcs11-helper pcsc-tools ca-certificates-icp_br safesigniden
 set -l emuladores retroarch-assets-ozone retroarch retroarch-assets-ozone retroarch-assets-xmb retroarch-assets-glui ventoy-bin 
 
 
-set -l pacotes $tools $fonts $dev $token $network $emuladores
+set -l pacotes $tools $fonts $dev $token $network 
 
 sudo ls -la
 yay -Sy
