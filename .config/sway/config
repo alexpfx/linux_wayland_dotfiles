@@ -1,8 +1,14 @@
+
+
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 set $config_host $(hostname)
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 set $_JAVA_AWT_WM_NONREPARENTING 1
 set $ntf notify-send -t 1000
+
+output "Unknown Unknown Unknown" {
+	mode 1920x1080@60hz
+}
 
 input * {
 	repeat_delay 250
