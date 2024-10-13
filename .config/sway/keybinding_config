@@ -244,6 +244,6 @@ bindsym $mod+Shift+p exec pm menu -w
 bindsym Print exec grimshot copy area
 bindsym $mod+Ctrl+h exec $mouse_left
 bindsym $mod+Ctrl+l exec $mouse_right
-bindsym $mod+Backspace exec yad --entry | sibe-merge | wl-copy
+bindsym mod4+Backspace exec yad --entry | sibe-merge | wl-copy
 bindsym $mod+Shift+Backspace exec sibe-massa get -c 296 -a 2 -f 3 | wl-copy
 
