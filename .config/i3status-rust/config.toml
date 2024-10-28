@@ -30,4 +30,4 @@ block = "sound"
 [[block]]
 block = "custom"
 command = "/brightness.sh"
-interval = 10
+interval = 1

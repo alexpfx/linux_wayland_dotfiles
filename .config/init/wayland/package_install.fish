@@ -1,6 +1,6 @@
 #!/usr/bin/fish
-set -l wl_tools "wl-clipboard" "wofi" "waybar" "wtype" "ydotool" "slurp" "grim" "swappy" "rofi-lbonn-wayland-git" "qt5-wayland" "qt6-wayland" "hyprpaper" "dunst" "xdg-desktop-portal-hyprland"
-set -l other "ttf-font-awesome" "sddm" "hyprland" "kwayland5" "eos-sddm-theme"
+set -l wl_tools "wl-clipboard" "wofi" "waybar" "wtype" "ydotool" "slurp" "grim" "swappy" "rofi-lbonn-wayland-git" "qt5-wayland" "qt6-wayland" "hyprpaper" "dunst" "xdg-desktop-portal-wlr"
+set -l other "ttf-font-awesome" "sddm" "kwayland5" "eos-sddm-theme"
 
 
 set -l pacotes $wl_tools $other
