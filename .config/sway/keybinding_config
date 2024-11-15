@@ -48,14 +48,14 @@ set $ws4 "ws4_class"
 
 
    
-for_window [workspace=$Work1] layout tabbed
-for_window [workspace=$Work2] layout tabbed
-for_window [workspace=$Work3] layout tabbed
-for_window [workspace=$Work4] layout tabbed
-for_window [workspace=$Work5] layout tabbed
-for_window [workspace=$Work6] layout tabbed
-for_window [workspace=$Work7] layout tiled
-for_window [workspace=$Work8] layout tabbed
+for_window [workspace=$Work1] layout tiled
+for_window [workspace=$Work2] layout tiled
+for_window [workspace=$Work3] layout tiled
+for_window [workspace=$Work4] layout tiled
+for_window [workspace=$Work5] layout tiled
+for_window [workspace=$Work6] layout tiled
+for_window [workspace=$Work7] layout splitv
+for_window [workspace=$Work8] layout tiled
 for_window [workspace=$Work9] layout tiled
 for_window [workspace=$Work0] layout tiled
 
@@ -153,6 +153,7 @@ bindsym $mod+g mode "goto"
 bindsym $mod+a mode "action"
 bindsym $mod+o mode "open"
 bindsym $mod+F1 mode "change_config"
+bindsym $mod+F2 exec mpv $(wl-paste)
 
    
 # Start a terminal
@@ -236,13 +237,14 @@ bindsym $mod+e layout splith
 bindsym $mod+f layout floating
 
 
+
 # Make the current focus fullscreen
 # bindsym $mod+f fullscreen
 
 bindsym $mod+Shift+e exec thunar
 bindsym $mod+Shift+v exec superkey
 bindsym $mod+Shift+p exec pm menu -w
-bindsym Print exec grimshot copy area
+bindsym Print exec grimshot savecopy area
 bindsym $mod+Ctrl+h exec $mouse_left
 bindsym $mod+Ctrl+l exec $mouse_right
 bindsym $mod+Backspace exec yad --entry | sibe-merge | wl-copy
