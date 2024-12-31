@@ -10,7 +10,7 @@ set $Work9 9
 set $Work0 10:0 
 
 set $mod Mod4
-set $modAux Mod1
+set $modAux Mod4
 set $left h
 set $down j
 set $up k
